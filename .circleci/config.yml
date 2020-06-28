@@ -8,6 +8,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: install heroku-builds plugin in order to run heroku builds:create
+          command: heroku plugins:install heroku-builds
+      - run:
           name: force deploy to heroku from circleci
           command: heroku builds:create --source-url https://shannonzylstra:$GITHUB_TOKEN@api.github.com/repos/shannonzylstra/contentful-gatsby-blog/tarball/master/ --app $HEROKU_APP_NAME
   build:
