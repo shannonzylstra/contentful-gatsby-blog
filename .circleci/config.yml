@@ -8,8 +8,8 @@ jobs:
     steps:
       - checkout
       - run:
-        name: force deploy to heroku from circleci
-        command: heroku builds:create --source-url https://shannonzylstra:$GITHUB_TOKEN@api.github.com/repos/shannonzylstra/contentful-gatsby-blog/tarball/master/ --app $HEROKU_APP_NAME
+          name: force deploy to heroku from circleci
+          command: heroku builds:create --source-url https://shannonzylstra:$GITHUB_TOKEN@api.github.com/repos/shannonzylstra/contentful-gatsby-blog/tarball/master/ --app $HEROKU_APP_NAME
   build:
     docker: # run the steps with Docker
       - image: circleci/node:8
